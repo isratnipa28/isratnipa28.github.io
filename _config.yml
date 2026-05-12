@@ -1,0 +1,8 @@
+title: "Nipa — AI Researcher & Storyteller"
+description: "Research notes on federated learning, graph neural networks, IoT security, and creative technical writing."
+author: Nipa
+url: "https://isratnipa28.github.io"
+permalink: /posts/:title.html
+markdown: kramdown
+theme: null
+future: true
