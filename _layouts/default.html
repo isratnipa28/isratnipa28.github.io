@@ -24,12 +24,30 @@
     <!-- Reading Progress Bar -->
     <div class="progress-bar" id="progress-bar"></div>
 
-    <!-- Theme Toggle -->
-    <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark/light mode">◐</button>
+    <!-- Sticky Navigation Header -->
+    <header class="global-header">
+        <div class="header-container">
+            <div class="header-left">
+                <a href="{{ '/' | relative_url }}" class="publication-logo">Nipa</a>
+            </div>
+            <div class="header-center-right">
+                <nav class="header-nav">
+                    <a href="{{ '/writing.html' | relative_url }}">Archive</a>
+                    <a href="{{ '/about.html' | relative_url }}">About</a>
+                </nav>
+                <div class="header-right">
+                    <button class="subscribe-btn">Subscribe</button>
+                </div>
+                <!-- Theme Toggle inside navigation -->
+                <button class="theme-toggle-inline" id="theme-toggle" aria-label="Toggle dark/light mode">◐</button>
+            </div>
+        </div>
+    </header>
 
     <main>
         {{ content }}
     </main>
+
 
     <script>
     // Reading Progress Bar

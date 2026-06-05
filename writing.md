@@ -6,22 +6,16 @@ description: All blog posts
 
 <p class="page-intro">This is where my heart and my code meet. Every post is a little story about what I learned, what moved me, and what I hope the future feels like.</p>
 
-{% for post in site.posts %}
-<div class="writing-entry animate-enter" style="animation-delay: {{ forloop.index | times: 0.05 }}s;">
-    <a href="{{ post.url | relative_url }}" class="writing-title">{{ post.title }}</a>
-    <div class="writing-meta">
-        <span>{{ post.content | number_of_words | divided_by: 200 | at_least: 1 }} min read</span>
-        <span>{{ post.date | date: "%b %d, %Y" }}</span>
+<div class="writing-empty">
+    <p>No posts available at the moment. Subscribe to get updates when new pieces are published.</p>
+    
+    <div class="inline-subscribe-box">
+        <h3>Subscribe to the newsletter</h3>
+        <p>Sent directly to your inbox whenever there is a new story.</p>
+        <form class="subscribe-form" onsubmit="event.preventDefault(); alert('Subscribed!');">
+            <input type="email" placeholder="Type your email..." required>
+            <button type="submit">Subscribe</button>
+        </form>
     </div>
-    {% if post.description %}
-    <p class="writing-desc">{{ post.description }}</p>
-    {% endif %}
-    {% if post.tags.size > 0 %}
-    <div class="writing-tags">
-        {% for tag in post.tags %}
-        <span class="tag">#{{ tag }}</span>
-        {% endfor %}
-    </div>
-    {% endif %}
 </div>
-{% endfor %}
+

@@ -117,8 +117,13 @@ class UXAuditor:
         complex_elements = len(re.findall(r'<input|<select|<textarea|<option', content, re.IGNORECASE))
 
         # --- 1. PSYCHOLOGY LAWS ---
-        # Hick's Law
-        nav_items = len(re.findall(r'<NavLink|<Link|<a\s+href|nav-item', content, re.IGNORECASE))
+        # Hick's Law - count links inside <nav> elements or elements with nav-item class
+        nav_blocks = re.findall(r'<nav[^>]*>(.*?)</nav>', content, re.DOTALL | re.IGNORECASE)
+        if nav_blocks:
+            nav_items = sum(len(re.findall(r'<NavLink|<Link|<a\s+href', block, re.IGNORECASE)) for block in nav_blocks)
+        else:
+            nav_items = len(re.findall(r'class=["\'][^"\']*nav-item[^"\']*["\']', content, re.IGNORECASE))
+            
         if nav_items > 7:
             self.issues.append(f"[Hick's Law] {filename}: {nav_items} nav items (Max 7)")
         
