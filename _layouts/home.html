@@ -3,156 +3,104 @@ layout: default
 ---
 
 <div class="home-container">
-    <!-- Row 1: Hero Feature Section (Split 65% / 35%) -->
-    <section class="hero-grid">
-        <!-- Left Column (65%): Featured Post -->
-        <div class="featured-column animate-enter">
-            <article class="featured-article-card">
-                <div class="featured-image-wrapper">
-                    <!-- Aspect ratio 16/9 placeholder -->
-                    <div class="placeholder-image"></div>
-                </div>
-                <div class="featured-content">
-                    <span class="category-tag">Research & Theory</span>
-                    <h2 class="featured-title">
-                        <a href="#">Federated Learning in Edge Networks: A New Trust Paradigm</a>
-                    </h2>
-                    <p class="featured-teaser">
-                        How decentralizing machine learning architectures allows us to build powerful model systems without sacrificing user privacy. A look into client-server weight dynamics.
-                    </p>
-                    <div class="featured-meta">
-                        <span class="meta-date">June 5, 2026</span>
-                        <span class="meta-divider">·</span>
-                        <span class="meta-readtime">8 min read</span>
+    {% if site.posts.size > 0 %}
+        <!-- Row 1: Hero Feature Section (Split 65% / 35%) -->
+        <section class="hero-grid {% if site.posts.size <= 1 %}full-width-hero{% endif %}">
+            <!-- Left Column (65%): Featured Post -->
+            {% assign featured = site.posts.first %}
+            <div class="featured-column animate-enter">
+                <article class="featured-article-card">
+                    <div class="featured-image-wrapper">
+                        <!-- Aspect ratio 16/9 placeholder -->
+                        <div class="placeholder-image"></div>
                     </div>
-                </div>
-            </article>
-        </div>
-
-        <!-- Right Column (35%): Top Lists Sidebar -->
-        <aside class="sidebar-column animate-enter" style="animation-delay: 0.1s;">
-            <h3 class="sidebar-header">Trending Stories</h3>
-            <div class="top-list-stack">
-                <div class="top-list-item">
-                    <span class="top-list-number">01</span>
-                    <div class="top-list-content">
-                        <h4 class="top-list-title">
-                            <a href="#">The Canopy Calculus: Estimating Oil Palm Biomass from UAV Imagery</a>
-                        </h4>
-                        <span class="top-list-author">by Nipa</span>
+                    <div class="featured-content">
+                        <span class="category-tag">{{ featured.category | default: 'Research' }}</span>
+                        <h2 class="featured-title">
+                            <a href="{{ featured.url | relative_url }}">{{ featured.title }}</a>
+                        </h2>
+                        <p class="featured-teaser">
+                            {{ featured.description | default: featured.excerpt | strip_html | truncatewords: 35 }}
+                        </p>
+                        <div class="featured-meta">
+                            <span class="meta-date">{{ featured.date | date: "%B %d, %Y" }}</span>
+                            <span class="meta-divider">·</span>
+                            <span class="meta-readtime">{{ featured.content | number_of_words | divided_by: 200 | at_least: 1 }} min read</span>
+                        </div>
                     </div>
-                </div>
-
-                <div class="top-list-item">
-                    <span class="top-list-number">02</span>
-                    <div class="top-list-content">
-                        <h4 class="top-list-title">
-                            <a href="#">Steganography in the Age of Generative AI</a>
-                        </h4>
-                        <span class="top-list-author">by Nipa</span>
-                    </div>
-                </div>
-
-                <div class="top-list-item">
-                    <span class="top-list-number">03</span>
-                    <div class="top-list-content">
-                        <h4 class="top-list-title">
-                            <a href="#">Designing Gentle Systems: A Humanist View of Computer Vision</a>
-                        </h4>
-                        <span class="top-list-author">by Nipa</span>
-                    </div>
-                </div>
+                </article>
             </div>
-        </aside>
-    </section>
 
-    <!-- Thick Divider -->
-    <hr class="section-divider">
-
-    <!-- Row 2: Chronological Content Feed -->
-    <section class="feed-section animate-enter" style="animation-delay: 0.2s;">
-        <h3 class="feed-header">Latest Notes</h3>
-        
-        <div class="feed-stack">
-            <!-- Feed Item 1 -->
-            <article class="feed-item">
-                <div class="feed-item-left">
-                    <span class="feed-item-category">Machine Learning</span>
-                    <h3 class="feed-item-title">
-                        <a href="#">Lost in the Latent Space: Why Generative Models Hallucinate</a>
-                    </h3>
-                    <p class="feed-item-teaser">
-                        An exploration of manifold gaps and alignment bugs in large multimodal models. Why AI dreams up alternative realities.
-                    </p>
-                    <div class="feed-item-meta">
-                        <span class="meta-date">May 28, 2026</span>
-                        <span class="meta-divider">·</span>
-                        <span class="meta-readtime">5 min read</span>
-                        <span class="meta-divider">·</span>
-                        <span class="feed-like-action" onclick="alert('Liked!')">
-                            <svg class="like-icon" viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" stroke-width="2" fill="none"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
-                            <span class="like-count">42</span>
-                        </span>
+            <!-- Right Column (35%): Top Lists Sidebar -->
+            {% if site.posts.size > 1 %}
+            <aside class="sidebar-column animate-enter" style="animation-delay: 0.1s;">
+                <h3 class="sidebar-header">Trending Stories</h3>
+                <div class="top-list-stack">
+                    {% for post in site.posts offset:1 limit:3 %}
+                    <div class="top-list-item">
+                        <span class="top-list-number">0{{ forloop.index }}</span>
+                        <div class="top-list-content">
+                            <h4 class="top-list-title">
+                                <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+                            </h4>
+                            <span class="top-list-author">by {{ post.author | default: site.author | default: 'Nipa' }}</span>
+                        </div>
                     </div>
+                    {% endfor %}
                 </div>
-                <div class="feed-item-right">
-                    <div class="feed-thumbnail placeholder-thumb1"></div>
-                </div>
-            </article>
+            </aside>
+            {% endif %}
+        </section>
 
-            <!-- Feed Item 2 -->
-            <article class="feed-item">
-                <div class="feed-item-left">
-                    <span class="feed-item-category">Security</span>
-                    <h3 class="feed-item-title">
-                        <a href="#">Can You Keep a Secret? Adversarial Defense for Privacy Preservation</a>
-                    </h3>
-                    <p class="feed-item-teaser">
-                        Preventing personal data exploitation using strategic noise perturbations. Designing defenses against steganographic scraping.
-                    </p>
-                    <div class="feed-item-meta">
-                        <span class="meta-date">May 14, 2026</span>
-                        <span class="meta-divider">·</span>
-                        <span class="meta-readtime">6 min read</span>
-                        <span class="meta-divider">·</span>
-                        <span class="feed-like-action" onclick="alert('Liked!')">
-                            <svg class="like-icon" viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" stroke-width="2" fill="none"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
-                            <span class="like-count">29</span>
-                        </span>
-                    </div>
-                </div>
-                <div class="feed-item-right">
-                    <div class="feed-thumbnail placeholder-thumb2"></div>
-                </div>
-            </article>
+        <!-- Thick Divider -->
+        {% if site.posts.size > 1 %}
+        <hr class="section-divider">
 
-            <!-- Feed Item 3 -->
-            <article class="feed-item">
-                <div class="feed-item-left">
-                    <span class="feed-item-category">Computer Vision</span>
-                    <h3 class="feed-item-title">
-                        <a href="#">Angular-Temporal Attention: The Next Frontier in Video Models</a>
-                    </h3>
-                    <p class="feed-item-teaser">
-                        Why standard self-attention fails in video tracking and how angular-temporal mappings resolve complex object intersections.
-                    </p>
-                    <div class="feed-item-meta">
-                        <span class="meta-date">Apr 30, 2026</span>
-                        <span class="meta-divider">·</span>
-                        <span class="meta-readtime">11 min read</span>
-                        <span class="meta-divider">·</span>
-                        <span class="feed-like-action" onclick="alert('Liked!')">
-                            <svg class="like-icon" viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" stroke-width="2" fill="none"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
-                            <span class="like-count">56</span>
-                        </span>
+        <!-- Row 2: Chronological Content Feed -->
+        <section class="feed-section animate-enter" style="animation-delay: 0.2s;">
+            <h3 class="feed-header">Latest Notes</h3>
+            
+            <div class="feed-stack">
+                {% for post in site.posts offset:1 %}
+                <article class="feed-item">
+                    <div class="feed-item-left">
+                        <span class="feed-item-category">{{ post.category | default: 'Writing' }}</span>
+                        <h3 class="feed-item-title">
+                            <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+                        </h3>
+                        <p class="feed-item-teaser">
+                            {{ post.description | default: post.excerpt | strip_html | truncatewords: 25 }}
+                        </p>
+                        <div class="feed-item-meta">
+                            <span class="meta-date">{{ post.date | date: "%b %d, %Y" }}</span>
+                            <span class="meta-divider">·</span>
+                            <span class="meta-readtime">{{ post.content | number_of_words | divided_by: 200 | at_least: 1 }} min read</span>
+                            <span class="meta-divider">·</span>
+                            <span class="feed-like-action" onclick="alert('Liked!')">
+                                <svg class="like-icon" viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" stroke-width="2" fill="none"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+                                <span class="like-count">12</span>
+                            </span>
+                        </div>
                     </div>
-                </div>
-                <div class="feed-item-right">
-                    <div class="feed-thumbnail placeholder-thumb3"></div>
-                </div>
-            </article>
-        </div>
-    </section>
+                    <div class="feed-item-right">
+                        <div class="feed-thumbnail placeholder-thumb{{ forloop.index | modulo: 3 | plus: 1 }}"></div>
+                    </div>
+                </article>
+                {% endfor %}
+            </div>
+        </section>
+        {% endif %}
+    {% else %}
+        <!-- Clean Personal Greeting/Empty State when zero posts -->
+        <section class="empty-home animate-enter">
+            <h1 class="welcome-title">Nipa</h1>
+            <p class="welcome-subtitle">AI researcher, storyteller, and maker of gentle systems.</p>
+            <hr class="section-divider">
+            <p class="welcome-text">
+                Welcome to my personal corner of the web. I write about machine learning, privacy preservation, and remote sensing. Check back soon for new research notes and stories.
+            </p>
+        </section>
+    {% endif %}
 
     <!-- Footer -->
     <footer class="site-footer">
