@@ -1,34 +1,33 @@
 ---
 layout: page
 title: About Israt Jahan Nipa
-description: Senior Lecturer at DIU & AI Researcher at AIT working on Federated Learning and Edge AI Security.
+description: Software Quality Assurance Engineer & M.Eng. ICT Graduate from AIT specializing in SQA, Federated Learning, and IoT Security.
 ---
 
 ## Bio
 
-I am **Israt Jahan Nipa**, an AI researcher and **Senior Lecturer** in the Department of Computer Science and Engineering at [Daffodil International University (DIU)](https://daffodilvarsity.edu.bd/), Bangladesh. Currently, I am pursuing my **Master's degree** in Information & Communication Technologies at the [Asian Institute of Technology (AIT)](https://ait.ac.th/), Thailand under the prestigious **His Majesty the King's Royal Thai Government Scholarship**.
+I am **Israt Jahan Nipa**, a Software Quality Assurance Engineer with hands-on experience in manual, regression, API, and mobile testing across Agile teams. I hold a Master of Engineering (M.Eng.) degree in Information and Communication Technology from the [Asian Institute of Technology (AIT)](https://ait.ac.th/), Thailand under the prestigious **His Majesty the King's Royal Thai Government Scholarship**, where my research focused on federated learning and IoT security.
 
-Before embarking on full-time graduate research, I worked as a **Software Quality Assurance Engineer**, where testing complex systems instilled a deep commitment to software reliability, boundary testing, and user-centric security.
+I write about software testing practices, quality engineering, test automation, and how AI/ML concepts intersect with building resilient, well-tested software systems.
 
 ---
 
-## Research Interests
+## Research & Technical Interests
 
-My current research operates at the intersection of **Privacy-Preserving Machine Learning**, **Edge Computing**, and **IoT Cybersecurity**:
+My work operates at the intersection of **Software Quality Engineering** and **Privacy-Preserving Machine Learning**:
 
-- **Federated Learning (FL)**: Decentralized model aggregation, client communication efficiency, and client heterogeneity.
-- **Graph Neural Networks (GNNs)**: Topology-aware intrusion detection for edge and industrial IoT networks (Edge-IIoTset).
-- **Parameter-Efficient Fine-Tuning (PEFT / LoRA)**: Deploying compact adaptation layers on compute-constrained edge nodes.
-- **Smart Grid Security & Sustainable AI**: Anomaly detection in solar/renewable energy systems, microgrid fault monitoring, and low-power AI (Parameter Golf & LPCVC).
+- **Software Quality Assurance**: Manual & automated testing strategies, regression testing, API validation (Postman/Python), and Playwright test architecture.
+- **Federated Learning (FL)**: Decentralized model aggregation, client communication efficiency, and privacy-preserving AI.
+- **Graph Neural Networks & Security**: Topology-aware intrusion detection for edge and industrial IoT networks.
+- **AI Reliability & Testing**: Evaluating ML model robustness, edge-case validation, and metamorphic testing techniques.
 
 ---
 
 ## Academic & Professional Background
 
-- **Master of Engineering in ICT / Computer Science** — Asian Institute of Technology (AIT), Thailand *(His Majesty the King's Scholarship)*
-- **Bachelor of Science in Computer Science & Engineering** — Daffodil International University, Bangladesh
-- **Senior Lecturer** — Department of Computer Science & Engineering, Daffodil International University
-- **Software QA Engineer** — Industry Experience in automated & manual testing, test architecture, and model reliability verification.
+- **Master of Engineering in ICT** — Asian Institute of Technology (AIT), Thailand *(His Majesty the King's Scholarship)*
+- **Bachelor of Science in Computer Science & Engineering** — Bangladesh
+- **Software QA Engineer** — Professional experience in manual, regression, API, and mobile testing across Agile teams.
 
 ---
 

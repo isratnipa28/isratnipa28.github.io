@@ -42,7 +42,7 @@ My submission process followed a sequence that my advisor, Dr. Attaphongse, help
 
 The publication process involves trade-offs that research idealism does not prepare you for. Responding to reviewer comments requires balancing genuine scientific improvement against pragmatic scope management—a reviewer might request experiments that would take six months, and the response must acknowledge the suggestion while explaining why the current scope is sufficient. This diplomatic skill is nowhere in any methodology textbook but is essential for navigating peer review.
 
-Timing matters. Credible journals take weeks to months for first decisions; anything peer-reviewed and accepted in days is a serious red flag. During the waiting period, productive strategies include starting the next project, preparing revisions for anticipated criticisms, and managing the anxiety that comes with having your work judged by strangers.
+Timing matters. Credible journals take weeks to months for first decisions. Navigating peer review requires patience. Academic publishing is a slow dialogue, but receiving feedback—even critical reviews—helps refine your work. Every revision strengthens your research rigor.
 
 The advisor relationship is the most underappreciated factor in first-time publication success. My advisor did not just help with the paper—he helped me develop the judgment, standards, and confidence needed to produce Q1-quality work. His belief in the contribution sustained me through the inevitable moments of doubt. None of this chapter of my research journey would exist without his guidance, patience, and willingness to invest time he could have spent on his own work.
 

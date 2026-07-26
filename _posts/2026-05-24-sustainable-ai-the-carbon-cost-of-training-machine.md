@@ -41,7 +41,7 @@ Practical strategies for reducing AI's carbon footprint operate at multiple leve
 
 ## Hardware Trade-offs, Model Compression, and Energy Budgets
 
-The tension between model performance and environmental cost is not easily resolved. In many domains, larger models genuinely perform better—and the applications they enable (climate modeling, drug discovery, materials science) may produce environmental benefits that dwarf their training costs. The goal is not to stop training large models but to stop wasting energy on unnecessary training—redundant experiments, poorly optimized code, over-sized models deployed where smaller ones would suffice.
+The tension between model performance and environmental cost is complex. Larger models often perform better, and their applications may yield environmental benefits. The goal is to eliminate wasteful training—redundant runs, unoptimized code, and oversized models deployed where smaller ones suffice.
 
 There is also an equity dimension. The cost of large-scale training is concentrated in well-funded labs and corporations, while the environmental externalities are distributed globally. Researchers at resource-constrained institutions cannot afford the compute to reproduce or challenge results from labs that train thousand-GPU models, creating a scientific power asymmetry that correlates with carbon asymmetry.
 
