@@ -7,15 +7,33 @@ category: "Cybersecurity"
 tags: [intrusion-detection, ids, ai-security]
 ---
 
-As part of Phase 6 in my AI and research journey, this essay explores key concepts in **Cybersecurity**.
+### **Phase 1: Core Problem Breakdown**
 
-## Key Takeaways & Research Insights
+* **Root Bottleneck**: High false-positive alarm rates in zero-day network anomaly detection across heterogeneous IIoT protocols.
+* **Key Architectural Trade-Offs**: Rule-based signature detection precision vs deep learning anomaly generalization across novel attack vectors.
+* **Core Intuitive Analogy**: A smart security guard who recognizes altered walking patterns rather than matching face photos against a database.
 
-1. **Understanding the Problem Domain**: In modern machine learning research, clarity of data and problem scope takes priority over arbitrary algorithmic complexity.
-2. **Methodology & Experiments**: Designing robust experiments requires rigorous evaluation, edge case testing, and empirical verification.
-3. **Lessons for Practice**: Whether working in software quality or edge intelligence, building reliable systems means anticipating real-world failure modes.
+---
 
-> "How machine learning models spot malicious network telemetry in real-time edge environments."
+### **Phase 2: The Medium Article**
 
-Stay tuned as I continue documenting technical notes and experimental findings across federated learning, edge computing, and AI system design.
+# Intrusion Detection Systems: The AI Gatekeepers Defending Our Connected World
+## How machine learning models spot malicious network telemetry in real-time edge environments.
 
+As billions of IoT and IIoT devices connect to critical infrastructure, **Intrusion Detection Systems (IDS)** serve as the primary defensive shield against malicious cyber activity.
+
+## Signature-Based vs Anomaly-Based Detection
+
+Traditional IDS tools rely on signature matching—looking for known attack hashes. While precise for known threats, signature systems fail against novel zero-day exploits.
+
+```
+Network Traffic -> Feature Extraction -> Deep Neural Network -> Classify: Normal vs Malicious
+```
+
+Machine learning-driven IDS models analyze traffic patterns, payload entropy, and packet timing to detect anomalous behavior in real time.
+
+> **Key Takeaway**: Machine learning enables Intrusion Detection Systems to identify novel attack variants by detecting behavioral anomalies rather than relying on static signatures.
+
+## Deploying IDS at the Network Edge
+
+Deploying ML-driven IDS engines directly onto edge routers and industrial gateways allows malicious traffic to be blocked in milliseconds, isolating compromised nodes before infection spreads across the wider network.

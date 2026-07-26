@@ -7,15 +7,35 @@ category: "Agentic AI"
 tags: [agentic-ai, autonomous-systems, ai-workflows]
 ---
 
-As part of Phase 8 in my AI and research journey, this essay explores key concepts in **Agentic AI**.
+### **Phase 1: Core Problem Breakdown**
 
-## Key Takeaways & Research Insights
+* **Root Bottleneck**: State drift, loop termination failure, and context window exhaustion in autonomous multi-agent systems.
+* **Key Architectural Trade-Offs**: Agent autonomy and reasoning freedom vs structured execution graph constraints.
+* **Core Intuitive Analogy**: Orchestrating a team of specialized software engineers with explicit task queues and code review gates.
 
-1. **Understanding the Problem Domain**: In modern machine learning research, clarity of data and problem scope takes priority over arbitrary algorithmic complexity.
-2. **Methodology & Experiments**: Designing robust experiments requires rigorous evaluation, edge case testing, and empirical verification.
-3. **Lessons for Practice**: Whether working in software quality or edge intelligence, building reliable systems means anticipating real-world failure modes.
+---
 
-> "Exploring multi-agent orchestration, tool usage, and self-correcting agentic feedback loops."
+### **Phase 2: The Medium Article**
 
-Stay tuned as I continue documenting technical notes and experimental findings across federated learning, edge computing, and AI system design.
+# Agentic AI Workflows: What Happens When AI Systems Start Making Decisions Autonomously?
+## Exploring multi-agent orchestration, tool usage, and self-correcting agentic feedback loops.
 
+**Agentic AI Workflows** represent a major evolution in artificial intelligence: moving from single-prompt generation to autonomous, multi-step goal execution.
+
+## How Agentic Workflows Function
+
+Instead of a single model call, an Agentic AI workflow coordinates reasoning loops, tool usage, and self-correction steps.
+
+```
+User Goal -> Task Planning -> Tool Execution -> Self-Reflection -> Final Output
+```
+
+1. **Planning**: Breaking complex goals into sequential sub-tasks.
+2. **Tool Use**: Executing code, searching databases, or querying external APIs.
+3. **Reflection & Correction**: Inspecting output errors and adjusting plan execution autonomously.
+
+> **Key Takeaway**: Agentic AI transforms LLMs from passive text generators into active problem-solving collaborators.
+
+## Preventing Agent Drift and Infinite Loops
+
+Building robust agent workflows requires setting strict recursion limits, enforcing schema-validated tool outputs, and maintaining structured state history to prevent infinite execution loops.
