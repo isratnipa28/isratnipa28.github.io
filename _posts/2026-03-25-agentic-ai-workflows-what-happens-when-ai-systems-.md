@@ -17,7 +17,7 @@ title: 'Agentic AI Workflows: What Happens When AI Systems Start Making Decision
 
 The jump from conversational AI to agentic AI is not just a feature upgrade—it is an architectural paradigm shift. A chatbot generates text in response to a prompt. An agentic system interprets a high-level goal, decomposes it into sub-tasks, selects and invokes tools, processes intermediate results, handles failures, and iterates until a success condition is met. The difference is analogous to the gap between a calculator and a junior engineer: one executes instructions; the other designs solutions.
 
-## The First-Principles Bottleneck
+## Single-Prompt LLMs vs. Multi-Step Autonomous Agents
 
 The core technical challenge of agentic AI is reliable multi-step reasoning under uncertainty. A single-turn chatbot must only generate a plausible response to an immediate query. An agentic system must maintain coherent plans across multiple steps, handle the cascading effects of errors at any step, and adapt when intermediate results deviate from expectations.
 
@@ -27,7 +27,7 @@ The planning challenge is equally formidable. Decomposing a goal like "analyze t
 
 Current large language models exhibit impressive surface-level planning ability—they can generate plausible task decompositions—but struggle with robust execution. They hallucinate tool calls that do not exist, misinterpret intermediate results, and fail to recover gracefully from API errors or unexpected data formats. The gap between generating a plan and reliably executing it is the central engineering challenge of agentic systems.
 
-## The Intuitive Breakdown
+## ReAct Loops, Tool Execution, and Context Management
 
 Think of the difference between giving someone driving directions and giving them a destination. Driving directions are a chatbot: "turn left, go straight, turn right, you have arrived." A destination is an agentic task: "get to the airport by 6 PM." The agent must check current traffic, consider alternative routes, monitor road conditions, refuel if necessary, and adapt in real time if an accident blocks the planned path. The destination-based approach is more powerful but requires dramatically more sophisticated decision-making.
 
@@ -37,7 +37,7 @@ For someone whose research focuses on federated learning, IoT security, and smar
 
 The enabling technology is tool integration. Large language models become useful agents not by knowing everything internally but by knowing which external tools to call and how to interpret their outputs. A model that can invoke a database query, parse the results, and use them to inform a subsequent API call is fundamentally more capable than a model that can only generate text.
 
-## Engineering Trade-offs and Production Realities
+## Error Cascades, Infinite Loops, and Token Cost Control
 
 Deploying agentic systems in production introduces risks that conversational AI does not face. An agent with tool access can cause side effects—modifying databases, sending emails, triggering API actions—that a text generator cannot. Each tool call is a potential irreversible action, and the system's ability to evaluate the consequences of its actions before executing them is limited by the same reasoning capabilities that make planning imperfect.
 
@@ -45,6 +45,6 @@ Guardrails become critical in proportion to the agent's autonomy. For low-stakes
 
 Cost is another consideration. Each step in an agentic workflow involves one or more LLM inference calls, each consuming compute resources and incurring latency. A twenty-step workflow might require thirty LLM calls, multiple API round-trips, and several minutes of wall-clock time—acceptable for some use cases but prohibitive for real-time applications.
 
-## Where This Is Heading
+## The Architecture of Self-Correcting AI Workflows
 
 Agentic AI is where "AI as tools" evolves into "AI as coordinated teammates." For critical infrastructure applications, the trajectory points toward autonomous monitoring agents that can detect, diagnose, and respond to threats faster than human operators alone—but only if we solve the reliability, safety, and guardrail challenges that currently limit deployment to low-stakes environments. The technology is promising; the engineering discipline to deploy it safely is still catching up.

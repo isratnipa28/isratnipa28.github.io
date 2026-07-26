@@ -17,7 +17,7 @@ title: 'Federated Learning for Smart Grids: Why Decentralized AI Makes Perfect S
 
 The alignment between federated learning and smart grid infrastructure is not coincidental—it is structural. Smart grids consist of geographically distributed substations, microgrids, and smart meters, each generating sensitive operational data that cannot be freely shared across organizational or jurisdictional boundaries. Centralized ML training—collect everything, train one model—violates the physical, regulatory, and security constraints that define energy systems. Federated learning's core premise—train models where data lives, share only parameters—maps directly onto the grid's distributed topology.
 
-## The First-Principles Bottleneck
+## Data Privacy Regulations and Grid Topology Constraints
 
 The centralization bottleneck in energy systems is regulatory before it is technical. Utility companies, grid operators, and energy regulators operate under strict data-sharing constraints. Consumption data reveals behavioral patterns protected by privacy laws. Operational data—load profiles, fault histories, protection relay configurations—constitutes critical infrastructure information whose exposure could enable targeted attacks. Cross-utility data sharing requires legal agreements, anonymization pipelines, and governance structures that rarely exist.
 
@@ -27,7 +27,7 @@ The result is data silos: each utility, each substation, each microgrid possesse
 
 Federated learning dissolves this bottleneck by design. Each participating entity—utility, substation, microgrid—trains a shared model on its local data and transmits only model parameter updates to a coordinating server. Raw data never leaves its origin. The coordinated model benefits from the statistical diversity of all participants without any single participant exposing its operational details.
 
-## The Intuitive Breakdown
+## Federated Optimization Across Substation and Meter Nodes
 
 Think of a group of hospitals that want to build a shared disease prediction model but cannot exchange patient records due to HIPAA. Each hospital trains the model on its own patients and shares what the model learned—updated weights—not what the patients looked like. The coordinating server combines these learned updates into a model that reflects the collective experience of all hospitals without any hospital revealing a single patient record.
 
@@ -37,7 +37,7 @@ The non-IID challenge is particularly acute in energy systems. Different nodes i
 
 Personalization strategies address this by allowing each participant to maintain a locally adapted model. The global model provides a common foundation; local fine-tuning tailors it to site-specific conditions. This hierarchical approach—global knowledge, local expertise—mirrors the operational structure of power systems, where system-wide coordination coexists with local control authority.
 
-## Engineering Trade-offs and Production Realities
+## Network Asymmetry, Device Latency, and Cyber Attack Vectors
 
 Deploying federated learning in operational energy networks introduces challenges beyond those found in simulation studies. Communication reliability is not guaranteed—substations in remote locations may have intermittent connectivity, and federated rounds must be robust to client dropout. Computational heterogeneity is extreme—a smart meter with an embedded microcontroller has different training capabilities than a substation server with GPU acceleration.
 
@@ -45,6 +45,6 @@ Security is a dual concern. The federated system itself must be protected agains
 
 Regulatory compliance adds operational complexity. Energy regulators may require audit trails of model training decisions, proof that specific data was not shared, and demonstration that the federated system meets reliability standards. These requirements translate into engineering constraints on the federated protocol—logging, verification, and certification mechanisms that research prototypes typically omit.
 
-## Where This Is Heading
+## The Architecture of Decentralized Energy Grids
 
 The convergence of federated learning, smart grid digitization, and renewable energy integration is creating demand for AI systems that operate within the physical, regulatory, and security constraints of energy infrastructure. My research trajectory positions me at this intersection—building on thesis work in federated intrusion detection and extending it toward federated load forecasting, anomaly detection, and grid optimization. The technical challenges are substantial, but the architectural alignment between federated learning and energy systems is so natural that the question is not whether this convergence will happen, but how quickly the engineering maturity will catch up with the research potential.

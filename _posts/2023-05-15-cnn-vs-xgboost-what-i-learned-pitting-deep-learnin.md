@@ -17,7 +17,7 @@ title: 'CNN vs. XGBoost: What I Learned Pitting Deep Learning Against Classic ML
 
 In AI research circles, deep learning enjoys a near-mythological status for computer vision tasks. Convolutional neural networks dominate leaderboards, and the implicit assumption is that traditional machine learning methods are relics of a pre-GPU era. During my undergraduate thesis on skin lesion classification, I decided to stress-test that assumption by running a controlled head-to-head: a custom CNN versus a battery of classic classifiers—XGBoost, Random Forest, SVM, Logistic Regression, KNN, and Decision Tree—on exactly the same HAM10000 dataset. The result was a three-point accuracy gap that forced me to rethink everything I thought I knew about model selection.
 
-## The First-Principles Bottleneck
+## Deep Spatial Features vs. Tabular Tree Ensembles
 
 The fundamental question is deceptively simple: where does classification performance actually come from? Deep learning evangelists attribute it to end-to-end feature learning—the network discovers representations that hand-engineering cannot match. Classical ML practitioners counter that given good features, a well-tuned ensemble can compete with anything. Both camps are partially right, and the bottleneck sits at their intersection: feature quality.
 
@@ -25,7 +25,7 @@ For image classification, the CNN extracts features and classifies in a single d
 
 Why did legacy approaches fail to create this gap before? Because they relied on hand-crafted features—GLCM textures, color histograms, shape descriptors—that were neither rich enough nor robust enough to differentiate seven visually similar lesion classes. The CNN backbone changed the game not because the classifier on top was magical, but because it provided higher-quality input representations. Once those representations existed, even a non-neural classifier could exploit them effectively.
 
-## The Intuitive Breakdown
+## Analyzing Performance Across Feature Scales
 
 Consider language translation. A skilled translator converts a difficult text into a clear English draft. Whether an editor or a proofreader then polishes that draft, the final quality depends heavily on the translator's work. The CNN is the translator—it converts raw pixel arrays into meaningful feature vectors. XGBoost is the editor—it draws decision boundaries in that feature space. When the translation is strong, even a simpler editor produces near-professional results.
 
@@ -35,7 +35,7 @@ XGBoost outperformed every other traditional classifier because gradient boostin
 
 The class imbalance challenge reinforced this point. Both pipelines struggled on minority classes—categories with fewer than 150 training samples—because no classifier can compensate for insufficient data. Oversampling, class weighting, and stratified splitting helped both approaches equally, confirming that the data pipeline, not the model family, was the primary lever for improvement.
 
-## Engineering Trade-offs and Production Realities
+## Deployment Complexity, Data Efficiency, and Model Interpretability
 
 Choosing between these approaches in production involves trade-offs that accuracy scores alone cannot capture. The CNN end-to-end pipeline is simpler to deploy—one model, one forward pass—but requires GPU inference and is harder to interpret. The two-stage pipeline with XGBoost is more modular: you can swap the classifier, inspect feature importances, and run inference on CPU, which matters for edge deployment in clinics without GPU infrastructure.
 
@@ -43,6 +43,6 @@ Training cost diverges dramatically. The CNN required hours of GPU time for hype
 
 Interpretability is another axis. XGBoost's feature importance scores provide a rough map of which embedding dimensions drive classification decisions. The CNN's internal representations resist easy inspection, making clinical validation harder. In a regulated medical context, the ability to explain why a model flagged a lesion as suspicious is not a luxury—it is a compliance requirement.
 
-## Where This Is Heading
+## Choosing the Right Tool for Medical Image Analysis
 
 The dichotomy between deep learning and classical ML is dissolving. Modern production systems routinely combine neural feature extractors with gradient-boosted heads, ensemble multiple architectures, or use neural architecture search to find the simplest network that meets a performance threshold. The real takeaway from my thesis was not which model won by three points, but that obsessing over model complexity while neglecting data quality, preprocessing rigor, and deployment constraints is the most common and most expensive mistake in applied machine learning. That lesson has followed me into every project since.

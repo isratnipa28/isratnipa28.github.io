@@ -17,7 +17,7 @@ title: "What It\u2019s Like to Do a Master\u2019s on a Royal Thai Scholarship as
 
 There are pivot moments that look minor in real time but reshape everything that follows. For me, it was an email confirming my acceptance to pursue a Master's degree in Information and Communication Technologies at the Asian Institute of Technology under the King's Scholarship. At the time, I understood it as a good opportunity. What I did not understand was how profoundly it would reorganize my assumptions about what I was capable of.
 
-## The First-Principles Bottleneck
+## The Academic and Cultural Transition to Graduate Research
 
 The core barrier to international graduate education for students from developing countries is not academic ability—it is economic constraint. Tuition fees, living expenses, visa costs, health insurance, travel, and registration fees accumulate into a sum that exceeds what most middle-class families in Bangladesh can sustain for two years. For many talented students, the dream of studying abroad ends before a single application is submitted, not because they lack the intellect but because the financial model is infeasible.
 
@@ -25,7 +25,7 @@ Scholarships address this constraint, but the impact extends far beyond the fina
 
 The bottleneck that scholarships resolve is not money per se—it is cognitive bandwidth. When a student must constantly manage financial anxiety, the mental resources available for deep learning, creative research, and intellectual risk-taking are substantially diminished. Removing that anxiety does not guarantee academic success, but it removes the heaviest obstacle to it.
 
-## The Intuitive Breakdown
+## Navigating High-Impact Research Under Scholarship Rigor
 
 Think of cognitive bandwidth as RAM in a computer. A system running a heavy background process—financial worry—has less capacity for its primary task. A scholarship clears that background process, freeing mental resources for research, learning, and personal growth. The output difference is not proportional to the money involved but to the cognitive space liberated.
 
@@ -35,7 +35,7 @@ The campus itself was a revelation. International students from dozens of countr
 
 But the most important lessons happened outside classrooms. I learned to cook—badly at first, then competently. I learned to budget monthly expenses in a foreign currency. I learned to navigate healthcare systems, banking procedures, and administrative bureaucracies in a second language. Each challenge was individually small; collectively, they constituted a crash course in adult self-sufficiency that no curriculum could replicate.
 
-## Engineering Trade-offs and Production Realities
+## Balancing Research Milestones and International Scholar Life
 
 Studying abroad involves trade-offs that prospective students rarely discuss. Independence is exhilarating but isolating. Cultural immersion is enriching but exhausting. Academic freedom is empowering but unstructured. The absence of familiar support systems—family, childhood friends, cultural norms—creates a vacuum that must be filled deliberately through new relationships, new routines, and new coping mechanisms.
 
@@ -45,6 +45,6 @@ There is also an information asymmetry that disadvantages first-generation inter
 
 The return on investment, however, is asymmetric in the other direction. The combination of a rigorous academic program, international exposure, research experience, and demonstrated independence creates a compound effect that accelerates career trajectories far beyond what a domestic degree alone would achieve. The scholarship's financial value is finite; the capability it enables is not.
 
-## Where This Is Heading
+## Long-Term Horizons in Global Tech Research
 
 Looking back, the King's Scholarship gave me something more valuable than tuition coverage—it gave me evidence that I could operate outside every familiar system I had ever known and still produce meaningful work. That confidence—tested through two years of navigating a foreign academic system, building a research profile, and learning to live independently—is the foundation upon which every subsequent professional decision rests. The degree is a credential. The transformation is permanent.

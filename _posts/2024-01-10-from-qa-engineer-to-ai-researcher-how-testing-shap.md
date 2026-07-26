@@ -17,7 +17,7 @@ title: 'From QA Engineer to AI Researcher: How Testing Shaped My Thinking About 
 
 My first real job was as a QA engineer. It was not glamorous. I clicked the same button twenty times from twenty different angles, late into the evening, to see if it would break. Some days I went home with nothing to show except a list of bugs in a spreadsheet and a tired pair of eyes. But something important was forming in those quiet hours—a mental model of reliability that would later reshape how I approach every machine learning experiment.
 
-## The First-Principles Bottleneck
+## The Paradigmatic Shift: From Deterministic Code to Probabilistic Models
 
 Software reliability and model reliability share a common root problem: the gap between tested conditions and real-world conditions. In traditional software, a feature passes a test suite written by someone who already knows how the feature is supposed to work. The dangerous bugs hide in the spaces between those predetermined tests—edge cases, unexpected input sequences, environmental variations that nobody anticipated. A QA engineer's job is to inhabit those gaps.
 
@@ -25,7 +25,7 @@ Machine learning amplifies this problem by orders of magnitude. A trained model 
 
 Traditional QA taught me to never trust the happy path. Developers would tell me a feature "works"—and they were right, for the three scenarios they had in mind. The bugs lived in the scenarios nobody imagined. Similarly, a model "works" on the benchmark—but it might silently fail on a minority class, give confidently wrong predictions on out-of-distribution inputs, or degrade gracefully in ways that aggregate metrics completely mask.
 
-## The Intuitive Breakdown
+## Bridging Quality Assurance with Machine Learning Validation
 
 Think of aggregate accuracy like a restaurant's average Yelp rating. A restaurant with 4.2 stars might have wonderful appetizers and terrible desserts—the average hides the variance. In my QA days, I learned to look past the average and ask: "Where are the one-star reviews hiding?" In ML, this translates to per-class precision and recall, confusion matrix analysis, and stratified evaluation across demographic or environmental slices.
 
@@ -35,7 +35,7 @@ During my undergraduate thesis on skin lesion classification, the HAM10000 datas
 
 In my Master's research on federated intrusion detection, the same pattern repeated at a larger scale. The Edge-IIoTset dataset contains millions of records with a heavy skew toward normal traffic. A model that performs well on average might completely miss rare attack categories—DDoS variants, scanning, spoofing—that constitute the entire reason the system exists. QA thinking demands you measure performance on the rare cases, not just the common ones.
 
-## Engineering Trade-offs and Production Realities
+## Adversarial Edge Cases and Production Failure Modes
 
 Applying QA rigor to ML evaluation introduces overhead. Per-class metrics, stratified cross-validation, adversarial testing, and distribution shift analysis all take time. In an academic setting with publication pressure, there is a constant temptation to report the single metric that looks best and move on. Resisting that temptation is the difference between a paper that survives real-world scrutiny and one that crumbles at deployment.
 
@@ -43,6 +43,6 @@ There is also a subtler trade-off around confidence calibration. A well-calibrat
 
 Another lesson from QA: documentation matters. In software testing, every bug report includes reproduction steps, environment details, and expected versus actual behavior. In ML research, this translates to recording hyperparameters, random seeds, data splits, and hardware configurations. Reproducibility is not a luxury—it is the scientific equivalent of a bug report that lets someone else verify your findings.
 
-## Where This Is Heading
+## Redefining Reliability in AI-Driven Systems
 
 As AI systems increasingly make decisions about medical diagnoses, infrastructure security, and financial transactions, the reliability standards demanded by these domains will converge with the rigor that QA has always required of traditional software. The ML community is slowly adopting practices like model cards, datasheets for datasets, and adversarial evaluation suites—all of which echo principles that QA engineers have practiced for decades. My year in testing did not teach me to build models. It taught me something more important: to never trust a system that only shows you its highlight reel.

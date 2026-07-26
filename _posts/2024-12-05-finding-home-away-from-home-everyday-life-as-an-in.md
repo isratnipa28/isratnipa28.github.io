@@ -17,7 +17,7 @@ title: 'Finding Home Away From Home: Everyday Life as an International Student i
 
 When people imagine studying abroad, they picture classrooms, research labs, graduation photos, and scenic campus shots. What they miss are the thousands of small, unglamorous moments that actually define the experience: navigating a transportation system in a language you do not speak, learning to cook because there is no other option, and slowly discovering that the unfamiliar street outside your window has become your street.
 
-## The First-Principles Bottleneck
+## Overcoming Cultural Friction and Language Barriers
 
 The core challenge of international student life is not academic—it is operational. Domestic students inherit a pre-built infrastructure of daily life: they know how banking works, how healthcare is accessed, where to buy food, and how to navigate bureaucracy. International students must construct this infrastructure from scratch in a foreign system, simultaneously managing academic demands that assume the infrastructure already exists.
 
@@ -25,7 +25,7 @@ This creates a dual-load problem. The cognitive bandwidth consumed by daily logi
 
 The compounding factor is information asymmetry. Students from families with study-abroad experience inherit practical knowledge—how visa extensions actually work versus how they are supposed to work, which neighborhoods are affordable, which administrative offices require which documents in which order. First-generation international students lack this inherited knowledge and must learn through direct experience, often through costly trial and error.
 
-## The Intuitive Breakdown
+## Establishing Routine, Community, and Psychological Resilience
 
 Think of it as deploying a server in a new data center where the documentation is in a language you are still learning, the networking conventions differ from everything you have configured before, and there is no rollback if you misconfigure the initial setup. Every configuration decision—choosing a bank, selecting a phone plan, establishing a food supply chain—must be made under uncertainty with limited information and no fallback to a familiar system.
 
@@ -37,7 +37,7 @@ Food was the next frontier. Before Thailand, I had never seriously cooked. The c
 
 Financial management underwent a similar forced maturation. When you are solely responsible for your expenses in a foreign currency, abstract concepts like budgeting and opportunity cost become viscerally concrete. You learn the difference between wants and needs not as a philosophical exercise but as a monthly accounting constraint.
 
-## Engineering Trade-offs and Production Realities
+## Managing Graduate Studies Amid Living Abroad
 
 Building a daily life abroad involves the same trade-off structure as any engineering project: time invested in infrastructure setup pays dividends in operational efficiency but diverts resources from the primary mission. The first month is almost entirely infrastructure—setting up the daily system. By the third month, most processes are automated by habit, and cognitive bandwidth is freed for academic work. By the sixth month, the foreign environment no longer feels foreign; it has been internalized as the new normal.
 
@@ -45,6 +45,6 @@ The social dimension introduces its own trade-offs. Building a new social networ
 
 Some of my most memorable moments were not the academic milestones but the incidental human connections that accumulated through daily routines. The delivery service staff member who recognized me because I never answered my phone. The grocery store owner who learned my usual purchases. These micro-relationships, individually insignificant, collectively constituted the social fabric that transformed a foreign country into a livable, even comfortable, home.
 
-## Where This Is Heading
+## Personal Growth Through Cross-Cultural Research Journeys
 
 The compound effect of two years of operational self-reliance, cross-cultural navigation, and daily problem-solving produces a capability set that no classroom could teach. The degree certifies academic competence; the daily life certifies adaptive capacity. When I eventually leave Thailand, the transcript will list courses and grades. The real education—cooking, budgeting, navigating bureaucracy, building relationships from scratch, and learning to feel at home in an unfamiliar world—will not appear on any document, but it will inform every decision I make for the rest of my career.

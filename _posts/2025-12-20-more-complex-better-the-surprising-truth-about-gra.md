@@ -17,7 +17,7 @@ title: "More Complex \u2260 Better: The Surprising Truth About Graph Neural Netw
 
 There is an unspoken hierarchy in machine learning research: complex models sit at the top, and simple models are treated as baselines to be surpassed. Graph neural networks, with their ability to model relational structure, occupied a prestigious position in my mental hierarchy—especially the spatio-temporal variants that capture both spatial relationships and temporal dynamics. Surely, for a task as complex as IoT intrusion detection across federated edge networks, these sophisticated architectures would dominate. My thesis results told a more nuanced story.
 
-## The First-Principles Bottleneck
+## The Over-Engineering Trap in Industrial Intrusion Detection
 
 The core question is when architectural complexity actually pays off. A model with more parameters and more representational capacity can, in principle, learn more complex patterns in data. But this capacity is only useful when the data contains complex patterns that simpler models cannot capture, when the training data is sufficient to learn those patterns without overfitting, and when the deployment constraints allow the computational cost of the complex model.
 
@@ -25,7 +25,7 @@ For IoT intrusion detection on Edge-IIoTset, the data was fundamentally tabular:
 
 Spatio-temporal GNNs are designed for data where spatial structure genuinely matters—traffic flow on road networks, signal propagation across sensor arrays, power distribution across grid topologies. When the graph is real and the spatial relationships carry genuine predictive signal, these models excel. When the graph is imposed on fundamentally tabular data, the extra architectural complexity introduces parameters that must be estimated from data without corresponding structural signal to guide them.
 
-## The Intuitive Breakdown
+## Comparing Deep Graph Models with Efficient Classical Baselines
 
 Imagine fitting a polynomial to data points. A linear fit (degree 1) captures broad trends but misses curvature. A quadratic fit (degree 2) captures curvature but might miss inflection points. A degree-20 polynomial can pass through every data point but oscillates wildly between them—it has memorized the data rather than learning the underlying pattern. The relationship between model complexity and generalization is not monotonic: beyond a certain point, additional complexity hurts performance on unseen data.
 
@@ -35,7 +35,7 @@ In my benchmarking framework, I compared MLPs, CNN-style temporal models, and se
 
 The most revealing metric was not aggregate accuracy but per-class detection rate on rare attack types. Complex models and simple models both struggled on severely underrepresented classes, confirming that the bottleneck was data insufficiency, not model expressiveness. Adding more parameters to a model that lacks sufficient training examples for critical classes is like adding more polynomial degrees to insufficient data points—it does not improve fit; it amplifies instability.
 
-## Engineering Trade-offs and Production Realities
+## Computational Overhead vs. Real-Time Detection Constraints
 
 In a federated edge deployment, the cost of model complexity is not merely academic. Every additional parameter increases the communication payload transmitted between clients and server in each federated round. For bandwidth-constrained edge networks—industrial IoT running on cellular or LoRaWAN links—this overhead is a hard constraint, not a rounding error.
 
@@ -45,6 +45,6 @@ Inference latency compounds the problem. An intrusion detection model operating 
 
 The counterargument—that GNNs would outperform on datasets with genuine graph structure—is valid and important. My results are specific to Edge-IIoTset's tabular traffic features, not a universal indictment of GNNs for security. But the lesson generalizes: architectural complexity must be justified by empirical evidence on the specific data and deployment scenario, not by theoretical capability alone.
 
-## Where This Is Heading
+## Pragmatic Model Selection for Network Security
 
 My current research philosophy is pragmatic empiricism: start with the simplest model that could plausibly work, measure rigorously, and add complexity only when the data clearly demands it. For future work on power grid security—where the graph topology is physical, fixed, and directly governs power flow—GNNs may be the right architectural choice. But I will arrive at that conclusion through evidence, not assumption. The most valuable outcome of my thesis was not a specific model—it was the intellectual habit of questioning whether complexity is earning its keep.

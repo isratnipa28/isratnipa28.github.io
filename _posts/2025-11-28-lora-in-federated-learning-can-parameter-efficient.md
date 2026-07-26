@@ -17,7 +17,7 @@ title: 'LoRA in Federated Learning: Can Parameter-Efficient Fine-Tuning Save Edg
 
 Low-Rank Adaptation (LoRA) emerged from the natural language processing community as a way to fine-tune large language models without updating all their parameters. The insight was elegant: instead of modifying a full weight matrix during fine-tuning, inject small low-rank decomposition matrices alongside the frozen original weights and train only those. The parameter count drops by orders of magnitude; the memory footprint shrinks proportionally; and the fine-tuned model performs comparably to a fully fine-tuned version on downstream tasks. When you combine this idea with federated learning—where communication cost is a first-class constraint—the potential is transformative.
 
-## The First-Principles Bottleneck
+## Communication Bottlenecks in Decentralized Learning
 
 Federated learning faces a compound resource bottleneck: computation on edge devices, memory on edge devices, and communication between edge devices and the coordination server. In each federated round, the server distributes a global model, each client trains it locally, and updated parameters are transmitted back. The cost of each step scales linearly with model size.
 
@@ -27,7 +27,7 @@ Traditional approaches to this bottleneck include model compression (pruning, qu
 
 LoRA attacks the bottleneck at a different level: it reduces the number of trainable parameters directly, which simultaneously reduces compute requirements (fewer gradients to calculate), memory requirements (fewer optimizer states to maintain), and communication requirements (fewer parameters to transmit). The original model weights are frozen and shared across all clients; only the small LoRA adapter matrices are trained locally and exchanged with the server.
 
-## The Intuitive Breakdown
+## Low-Rank Adaptation Mechanics for Edge Devices
 
 Imagine a global recipe book that every restaurant in a chain uses. Updating the entire book—printing new editions, shipping them to every location—is expensive. Instead, each restaurant receives a small card with local modifications: "add more chili for the Thai location," "reduce salt for the Japanese location." The core recipes never change; only the small adaptation cards are exchanged. The cost of distributing and collecting these cards is a fraction of shipping entire books.
 
@@ -37,7 +37,7 @@ The efficiency gains are dramatic. For a model with 50 million parameters, LoRA 
 
 This matters enormously for the kinds of deployments I study. In industrial IoT intrusion detection, edge devices—smart gateways, industrial controllers, embedded systems—have tight memory budgets (often 256 MB to 2 GB), limited compute (ARM CPUs, no GPU), and constrained network links (cellular, LoRaWAN, or intermittent WiFi). Full federated training of even moderate-sized models is infeasible on these platforms. LoRA-style parameter-efficient fine-tuning could make federated learning practical on hardware that currently cannot participate.
 
-## Engineering Trade-offs and Production Realities
+## Quantization Trade-offs and Aggregation Overhead
 
 LoRA is not a free lunch. Several trade-offs require careful consideration. The rank of the LoRA decomposition matrices controls the expressiveness of the adaptation—higher rank captures more complex adaptations but increases parameter count and communication cost. Choosing the optimal rank requires empirical tuning per task and architecture, and the optimal rank may differ across clients with different data distributions.
 
@@ -45,6 +45,6 @@ Not all layers benefit equally from LoRA adaptation. In transformer architecture
 
 There are also open questions about security. If LoRA adapters are the only parameters exchanged, privacy guarantees depend on what information those adapters encode about local data. Gradient inversion attacks on small adapter updates may be more or less effective than attacks on full model gradients—the answer depends on the adapter structure, the data sensitivity, and the aggregation protocol.
 
-## Where This Is Heading
+## Scaling Efficient Federated Fine-Tuning
 
 The convergence of parameter-efficient fine-tuning, federated learning, and edge hardware acceleration is creating a path toward truly distributed AI training on devices that were previously too constrained to participate. For future research in smart grid security and industrial IoT, this means the possibility of collaboratively trained detection models that respect the physical, computational, and privacy constraints of the environments they protect—without demanding cloud-scale infrastructure at the edge.

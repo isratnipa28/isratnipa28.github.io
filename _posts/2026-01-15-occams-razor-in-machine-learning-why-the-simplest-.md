@@ -16,7 +16,7 @@ title: "Occam\u2019s Razor in Machine Learning: Why the Simplest Model Often Win
 
 Occam's razor—the principle that among competing explanations of equal predictive power, the simpler one should be preferred—originates in medieval philosophy but might be the most underappreciated idea in modern machine learning. In a field obsessed with parameter counts, architectural novelty, and leaderboard rankings, the suggestion that a boring, well-tuned model might be the right choice feels almost heretical. Yet the empirical evidence, including my own thesis results, consistently supports it.
 
-## The First-Principles Bottleneck
+## Overfitting, Parameter Explosion, and Fragile Models
 
 The mathematical foundation of Occam's razor in ML is the bias-variance trade-off. A simple model with few parameters has high bias—it makes strong assumptions about the data-generating process that may not hold. A complex model with many parameters has low bias but high variance—it is flexible enough to fit the training data closely but sensitive to the specific training sample, leading to poor generalization.
 
@@ -26,7 +26,7 @@ In practice, research incentives push toward the complex end of this spectrum. N
 
 The problem compounds in resource-constrained settings. A complex model that achieves two percentage points higher accuracy on a benchmark but requires ten times more compute, five times more memory, and three times longer training time may be strictly inferior to the simpler alternative when deployed on edge devices with hard resource budgets. The accuracy gap might not even survive the transition from benchmark conditions to production data distributions.
 
-## The Intuitive Breakdown
+## The Power of Parsimony in Real-World ML Architecture
 
 Consider packing for a trip. An over-packer brings specialized gear for every conceivable scenario—rain jacket, snow boots, formal wear, hiking shoes, three different adapters—and arrives exhausted from hauling an enormous suitcase. A smart packer brings versatile essentials that cover most scenarios adequately and travels light. The over-packer has lower bias (prepared for anything) but higher variance (overwhelmed, slow, and fragile to unexpected luggage limits). The smart packer has higher bias (might be underdressed for one event) but lower variance (adaptable, fast, and robust).
 
@@ -36,7 +36,7 @@ On aggregate accuracy, the gap between the most complex GNN and the best-tuned M
 
 The three diagnostic questions I now apply before proposing any complex architecture crystallized from this experience. First: does the data contain rich structure that simpler models demonstrably cannot capture? If the features are tabular and the relationships are not explicitly spatial or temporal, the answer is usually no. Second: is the training data sufficient to estimate the additional parameters without overfitting? For Edge-IIoTset's rare attack classes with minimal samples, the answer was frequently no. Third: can the target deployment hardware actually run the complex model reliably? For edge devices with ARM CPUs and 512 MB of RAM, the answer for GNNs was definitively no.
 
-## Engineering Trade-offs and Production Realities
+## Interpretability, Maintenance Cost, and Deployment Friction
 
 Occam's razor does not say "always use the simplest model." It says: when simpler and complex models perform comparably, prefer the simpler one. The distinction matters because there are legitimate use cases where complexity is justified—language understanding requires transformers, protein structure prediction requires geometric deep learning, and video generation requires diffusion models with billions of parameters. The principle applies to the selection decision, not as a blanket prohibition on complexity.
 
@@ -44,6 +44,6 @@ In production environments, simplicity confers advantages beyond accuracy. Simpl
 
 There is also a reproducibility dividend. Simpler models with fewer hyperparameters produce more stable results across random seeds, hardware configurations, and library versions. Complex models with sensitive architectures often require exact environmental conditions to reproduce published results—a fragility that undermines scientific confidence.
 
-## Where This Is Heading
+## Principles for Building Robust, Simple Models
 
 The ML community is slowly recalibrating its relationship with complexity. Scaling laws research has revealed diminishing returns on model size beyond certain thresholds. Efficient ML conferences have grown in prominence. Model compression, distillation, and architecture search techniques are optimizing for deployment constraints rather than benchmark maximization. Occam's razor, applied rigorously and honestly, is becoming a competitive advantage—not because it produces glamorous results, but because it produces reliable, deployable, maintainable ones.
