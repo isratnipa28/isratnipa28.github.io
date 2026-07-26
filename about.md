@@ -16,7 +16,7 @@ I write about software testing practices, quality engineering, test automation, 
 
 My work operates at the intersection of **Software Quality Engineering** and **Privacy-Preserving Machine Learning**:
 
-- **Software Quality Assurance**: Manual & automated testing strategies, regression testing, API validation (Postman/Python), and Playwright test architecture.
+- **Software Quality Assurance**: Manual & automated testing strategies, regression testing, API validation (Postman/Python), and currently building automation skills with Playwright test architecture.
 - **Federated Learning (FL)**: Decentralized model aggregation, client communication efficiency, and privacy-preserving AI.
 - **Graph Neural Networks & Security**: Topology-aware intrusion detection for edge and industrial IoT networks.
 - **AI Reliability & Testing**: Evaluating ML model robustness, edge-case validation, and metamorphic testing techniques.
@@ -26,8 +26,8 @@ My work operates at the intersection of **Software Quality Engineering** and **P
 ## Academic & Professional Background
 
 - **Master of Engineering in ICT** — Asian Institute of Technology (AIT), Thailand *(His Majesty the King's Scholarship)*
-- **Bachelor of Science in Computer Science & Engineering** — Bangladesh
-- **Software QA Engineer** — Professional experience in manual, regression, API, and mobile testing across Agile teams.
+- **Bachelor of Science in Electronics & Telecommunication Engineering** — Daffodil International University, Dhaka, Bangladesh (2019–2023)
+- **Software QA Engineer** — CrackTech Limited, Dhaka, Bangladesh (Sep 2023 – Sep 2024): Manual, regression, API, and mobile testing across Agile teams.
 
 ---
 
@@ -42,5 +42,5 @@ My work operates at the intersection of **Software Quality Engineering** and **P
 ## Connect & Collaborate
 
 - **GitHub**: [github.com/isratnipa28](https://github.com/isratnipa28)
-- **LinkedIn**: [linkedin.com/in/israt-jahan-nipa](https://www.linkedin.com/in/israt-jahan-nipa)
+- **LinkedIn**: [linkedin.com/in/israt-jahan28](https://www.linkedin.com/in/israt-jahan28/)
 - **Institutional Site**: [sites.google.com/diu.edu.bd/israt-jahan-nipa](https://sites.google.com/diu.edu.bd/israt-jahan-nipa/home)
