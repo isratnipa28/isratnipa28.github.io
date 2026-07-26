@@ -1024,6 +1024,16 @@ a:hover {
     flex-shrink: 0;
 }
 
+.profile-avatar-img {
+    width: 96px;
+    height: 96px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid var(--border-color);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+    display: block;
+}
+
 .avatar-badge {
     display: flex;
     align-items: center;
