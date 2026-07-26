@@ -2,115 +2,110 @@
 layout: default
 ---
 
-<div class="home-container">
-    {% if site.posts.size > 0 %}
-        <!-- Row 1: Hero Feature Section (Split 65% / 35%) -->
-        <section class="hero-grid {% if site.posts.size <= 1 %}full-width-hero{% endif %}">
-            <!-- Left Column (65%): Featured Post -->
-            {% assign featured = site.posts.first %}
-            <div class="featured-column animate-enter">
-                <article class="featured-article-card">
-                    <div class="featured-image-wrapper">
-                        <!-- Aspect ratio 16/9 placeholder -->
-                        <div class="placeholder-image"></div>
-                    </div>
-                    <div class="featured-content">
-                        <span class="category-tag">{{ featured.category | default: 'Research' }}</span>
-                        <h2 class="featured-title">
-                            <a href="{{ featured.url | relative_url }}">{{ featured.title }}</a>
-                        </h2>
-                        <p class="featured-teaser">
-                            {{ featured.description | default: featured.excerpt | strip_html | truncatewords: 35 }}
-                        </p>
-                        <div class="featured-meta">
-                            <span class="meta-date">{{ featured.date | date: "%B %d, %Y" }}</span>
-                            <span class="meta-divider">·</span>
-                            <span class="meta-readtime">{{ featured.content | number_of_words | divided_by: 200 | at_least: 1 }} min read</span>
-                        </div>
-                    </div>
-                </article>
-            </div>
+<div class="home-wrapper">
+    <!-- Hero Intro Section matching sai21112000 layout -->
+    <section class="home-intro animate-enter">
+        <div class="intro-avatar">
+            <span class="avatar-badge">IN</span>
+        </div>
+        <div class="intro-text">
+            <p class="eyebrow">AI Research · Edge Intelligence · Federated Learning</p>
+            <h1 class="intro-title">Building resilient AI systems for real-world constraints.</h1>
+            <p class="intro-bio">
+                I'm <strong>Israt Jahan Nipa</strong>, an AI researcher and Senior Lecturer at Daffodil International University (DIU), currently completing my Master's at the Asian Institute of Technology (AIT), Thailand. I write about federated learning, graph neural networks, IoT security, and lessons from software quality engineering.
+            </p>
+        </div>
+    </section>
 
-            <!-- Right Column (35%): Top Lists Sidebar -->
-            {% if site.posts.size > 1 %}
-            <aside class="sidebar-column animate-enter" style="animation-delay: 0.1s;">
-                <h3 class="sidebar-header">Trending Stories</h3>
-                <div class="top-list-stack">
-                    {% for post in site.posts offset:1 limit:3 %}
-                    <div class="top-list-item">
-                        <span class="top-list-number">0{{ forloop.index }}</span>
-                        <div class="top-list-content">
-                            <h4 class="top-list-title">
-                                <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
-                            </h4>
-                            <span class="top-list-author">by {{ post.author | default: site.author | default: 'Nipa' }}</span>
-                        </div>
+    {% if site.posts.size > 0 %}
+        <!-- Featured & Latest Grid -->
+        <div class="home-grid">
+            <!-- Left Column: Essay Feed -->
+            <section class="essay-feed" aria-labelledby="latest-essays">
+                <div class="section-heading">
+                    <div>
+                        <p class="section-kicker">Latest</p>
+                        <h2 id="latest-essays">Essays & Research Notes</h2>
                     </div>
+                    <a href="{{ '/writing.html' | relative_url }}" class="archive-link">Full archive →</a>
+                </div>
+
+                <div id="post-list" class="post-list-stack">
+                    {% for post in site.posts limit:10 %}
+                    <article class="post-card post-item">
+                        <div class="post-card-copy">
+                            <div class="post-card-meta">
+                                <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%b %d, %Y" }}</time>
+                                <span class="meta-dot">·</span>
+                                <span>{{ post.content | number_of_words | divided_by: 200 | at_least: 1 }} min read</span>
+                                {% if post.category %}
+                                <span class="meta-dot">·</span>
+                                <span class="post-category-tag">{{ post.category }}</span>
+                                {% endif %}
+                            </div>
+                            <h2 class="post-card-title">
+                                <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+                            </h2>
+                            <p class="post-card-excerpt">
+                                {{ post.description | default: post.excerpt | strip_html | truncatewords: 28 }}
+                            </p>
+                            {% if post.tags %}
+                            <div class="tag-row" aria-label="Tags">
+                                {% for tag in post.tags limit:4 %}
+                                <span class="tag-pill">#{{ tag }}</span>
+                                {% endfor %}
+                            </div>
+                            {% endif %}
+                        </div>
+                    </article>
                     {% endfor %}
                 </div>
-            </aside>
-            {% endif %}
-        </section>
+            </section>
 
-        <!-- Thick Divider -->
-        {% if site.posts.size > 1 %}
-        <hr class="section-divider">
+            <!-- Right Sidebar Column -->
+            <aside class="sidebar-column" aria-label="Sidebar highlights">
+                <div class="sidebar-card">
+                    <h3 class="sidebar-title">Research Focus</h3>
+                    <ul class="focus-list">
+                        <li><strong>Federated Learning</strong>: Privacy-preserving edge optimization.</li>
+                        <li><strong>IoT Security</strong>: Intrusion detection using GNNs & LoRA.</li>
+                        <li><strong>Smart Energy</strong>: Anomaly detection for solar & renewable grids.</li>
+                        <li><strong>Software Quality</strong>: Reliability & edge-case testing in AI models.</li>
+                    </ul>
+                </div>
 
-        <!-- Row 2: Chronological Content Feed -->
-        <section class="feed-section animate-enter" style="animation-delay: 0.2s;">
-            <h3 class="feed-header">Latest Notes</h3>
-            
-            <div class="feed-stack">
-                {% for post in site.posts offset:1 %}
-                <article class="feed-item">
-                    <div class="feed-item-left">
-                        <span class="feed-item-category">{{ post.category | default: 'Writing' }}</span>
-                        <h3 class="feed-item-title">
-                            <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
-                        </h3>
-                        <p class="feed-item-teaser">
-                            {{ post.description | default: post.excerpt | strip_html | truncatewords: 25 }}
-                        </p>
-                        <div class="feed-item-meta">
-                            <span class="meta-date">{{ post.date | date: "%b %d, %Y" }}</span>
-                            <span class="meta-divider">·</span>
-                            <span class="meta-readtime">{{ post.content | number_of_words | divided_by: 200 | at_least: 1 }} min read</span>
-                            <span class="meta-divider">·</span>
-                            <span class="feed-like-action" onclick="alert('Liked!')">
-                                <svg class="like-icon" viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" stroke-width="2" fill="none"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
-                                <span class="like-count">12</span>
-                            </span>
+                <div class="sidebar-card">
+                    <h3 class="sidebar-title">Popular Essays</h3>
+                    <div class="top-list-stack">
+                        {% for post in site.posts offset:1 limit:4 %}
+                        <div class="top-list-item">
+                            <span class="top-list-number">0{{ forloop.index }}</span>
+                            <div class="top-list-content">
+                                <h4 class="top-list-title">
+                                    <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+                                </h4>
+                                <span class="top-list-meta">{{ post.date | date: "%b %Y" }}</span>
+                            </div>
                         </div>
+                        {% endfor %}
                     </div>
-                    <div class="feed-item-right">
-                        <div class="feed-thumbnail placeholder-thumb{{ forloop.index | modulo: 3 | plus: 1 }}"></div>
-                    </div>
-                </article>
-                {% endfor %}
-            </div>
-        </section>
-        {% endif %}
-    {% else %}
-        <!-- Clean Personal Greeting/Empty State when zero posts -->
-        <section class="empty-home animate-enter">
-            <h1 class="welcome-title">Nipa</h1>
-            <p class="welcome-subtitle">AI researcher, storyteller, and maker of gentle systems.</p>
-            <hr class="section-divider">
-            <p class="welcome-text">
-                Welcome to my personal corner of the web. I write about machine learning, privacy preservation, and remote sensing. Check back soon for new research notes and stories.
-            </p>
-        </section>
+                </div>
+            </aside>
+        </div>
     {% endif %}
 
     <!-- Footer -->
     <footer class="site-footer">
-        <div class="footer-links">
-            <a href="https://www.linkedin.com/in/vaidyasai/" target="_blank" rel="noopener">LinkedIn</a>
-            <a href="https://github.com/Sai21112000" target="_blank" rel="noopener">GitHub</a>
-            <a href="https://x.com/vaidyasaiteja" target="_blank" rel="noopener">Twitter</a>
-        </div>
-        <div class="footer-secondary">
-            <a href="{{ '/feed.xml' | relative_url }}">RSS</a>
+        <div class="footer-inner">
+            <div class="footer-links">
+                <a href="https://github.com/isratnipa28" target="_blank" rel="noopener">GitHub</a>
+                <a href="https://scholar.google.com" target="_blank" rel="noopener">Google Scholar</a>
+                <a href="https://www.linkedin.com/in/israt-jahan-nipa" target="_blank" rel="noopener">LinkedIn</a>
+            </div>
+            <div class="footer-copy">
+                <span>© {{ 'now' | date: "%Y" }} Israt Jahan Nipa. Built with Jekyll.</span>
+                <a href="{{ '/feed.xml' | relative_url }}">RSS Feed</a>
+            </div>
         </div>
     </footer>
 </div>
