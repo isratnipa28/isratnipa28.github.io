@@ -6,6 +6,10 @@ description: Software Quality Assurance Engineer & M.Eng. ICT Graduate from AIT 
 
 ## Bio
 
+<div class="about-avatar-wrapper">
+    <img src="{{ '/assets/images/profile.png' | relative_url }}" alt="Israt Jahan Nipa" class="profile-avatar-img">
+</div>
+
 I am **Israt Jahan Nipa**, a Software Quality Assurance Engineer with hands-on experience in manual, regression, API, and mobile testing across Agile teams. I hold a Master of Engineering (M.Eng.) degree in Information and Communication Technology from the [Asian Institute of Technology (AIT)](https://ait.ac.th/), Thailand under the prestigious **His Majesty the King's Royal Thai Government Scholarship**, where my research focused on federated learning and IoT security.
 
 I write about software testing practices, quality engineering, test automation, and how AI/ML concepts intersect with building resilient, well-tested software systems.

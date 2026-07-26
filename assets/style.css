@@ -1020,26 +1020,45 @@ a:hover {
     margin-bottom: 40px;
 }
 
-.intro-avatar {
+.intro-avatar,
+.about-avatar-wrapper {
     flex-shrink: 0;
     width: 96px;
     height: 96px;
+    min-width: 96px;
+    min-height: 96px;
+    max-width: 96px;
+    max-height: 96px;
     border-radius: 50%;
     overflow: hidden;
     position: relative;
     border: 2px solid var(--border-color);
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+    box-shadow: 0 8px 24px rgba(255, 90, 31, 0.2);
     background-color: var(--bg-accent);
 }
 
+.about-avatar-wrapper {
+    float: right;
+    margin: 0 0 20px 24px;
+}
+
+@media (max-width: 640px) {
+    .about-avatar-wrapper {
+        float: none;
+        margin: 0 auto 24px auto;
+    }
+}
+
 .profile-avatar-img {
-    width: 100% !important;
-    height: 100% !important;
+    width: 96px !important;
+    height: 96px !important;
+    min-width: 96px !important;
+    min-height: 96px !important;
     max-width: 96px !important;
     max-height: 96px !important;
     border-radius: 50%;
     object-fit: cover;
-    object-position: center 15%;
+    object-position: center center;
     display: block;
 }
 
