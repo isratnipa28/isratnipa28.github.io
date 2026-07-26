@@ -1022,15 +1022,24 @@ a:hover {
 
 .intro-avatar {
     flex-shrink: 0;
-}
-
-.profile-avatar-img {
     width: 96px;
     height: 96px;
     border-radius: 50%;
-    object-fit: cover;
+    overflow: hidden;
+    position: relative;
     border: 2px solid var(--border-color);
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+    background-color: var(--bg-accent);
+}
+
+.profile-avatar-img {
+    width: 100% !important;
+    height: 100% !important;
+    max-width: 96px !important;
+    max-height: 96px !important;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: center 15%;
     display: block;
 }
 
